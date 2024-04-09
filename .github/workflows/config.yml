@@ -2,25 +2,25 @@
 name: 'Link Checker: All English'
 version: 2
 on:
-jobs:
-  build:
-    docker:
-      - image: circleci/python:3.10
+  jobs:
+    build:
+      docker:
+        - image: circleci/python:3.10
 
-    working_directory: ~/repo
+      working_directory: ~/repo
 
-    steps:
-      # Step 1: obtain repo from GitHub
-      - checkout
-      # Step 2: create virtual env and install dependencies
-      - run:
-          name: create virtual env
-          command: |
-            python3 -m venv venv
-            . venv/bin/activate
-      # Step 3: run tests
-      - run:
-          name: run tests
-          command: |
-            . venv/bin/activate
-            python -m unittest test_calculator.py
+      steps:
+        # Step 1: obtain repo from GitHub
+        - checkout
+        # Step 2: create virtual env and install dependencies
+        - run:
+            name: create virtual env
+            command: |
+              python3 -m venv venv
+              . venv/bin/activate
+        # Step 3: run tests
+        - run:
+            name: run tests
+            command: |
+              . venv/bin/activate
+              python -m unittest test_calculator.py
