@@ -9,8 +9,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Build the Docker image
       - uses: actions/checkout@v4
+
+
+      - name: Build the Docker image
         run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
 #     run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
 #        working_directory: ~/repo
