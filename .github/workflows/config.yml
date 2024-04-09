@@ -17,8 +17,8 @@ jobs:
 
 
       - name: create virtual env
-        run:  python3 -m venv venv
+        run:  python -m venv venv/ |
             . venv/bin/activate
       - name: run tests
-        run: . venv/bin/activate
+        run: . venv/bin/activate |
             python -m unittest test_calculator.py
