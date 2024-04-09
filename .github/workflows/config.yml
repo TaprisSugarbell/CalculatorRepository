@@ -15,10 +15,5 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
 
-
-      - name: create virtual env
-        run:  python -m venv venv/ |
-            source venv/bin/activate
       - name: run tests
-        run: . venv/bin/activate |
-            python -m unittest test_calculator.py
+        run: python -m unittest test_calculator.py
