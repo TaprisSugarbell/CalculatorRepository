@@ -1,5 +1,7 @@
 # Python CircleCI 2.0 configuration file
+name: 'Link Checker: All English'
 version: 2
+on:
 jobs:
   build:
     docker:
