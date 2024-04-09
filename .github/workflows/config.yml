@@ -9,11 +9,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
       - name: Build the Docker image
-#      - run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
-      - working_directory: ~/repo
+      - uses: actions/checkout@v4
+        run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
+#     run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+        working_directory: ~/repo
 
       # Step 2: create virtual env and install dependencies
       - run:
